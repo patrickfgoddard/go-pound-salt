@@ -1,0 +1,138 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+/**
+ * General Text Formatting
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Asar|Fugaz+One|Titillium+Web:900');
+
+$font-titillium:  'Titillium Web', sans-serif;
+$font-asar: 'Asar', serif; // base
+$font-fugaz: 'Fugaz One', cursive; //titles
+
+html {
+  //Uncomment below if you would like to use rems
+  font-family: $font-asar;
+  font-size: 62.5%;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+a:link,
+a:visited {
+  color: salmon;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-fugaz;
+  margin: 2rem 0;
+}
+
+header,
+.main,
+footer {
+  background-color: #000;
+  max-width: 95rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.logo {
+  width: 25rem;
+}
+
+header {
+  background-color: #333;
+  background-image: url('../assets/img/gps-pattern.svg');
+  background-position: top-left;
+  background-size: 50%;
+  // padding: 2rem;
+  text-align: center;
+
+  h1 a:link,
+  h1 a:visited {
+    color: #000;
+    font-family: $font-titillium;
+    font-size: 8rem;
+    font-style: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow:
+   -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+
+    span {
+      color: #fff;
+       text-shadow:
+        -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+    }
+  }
+}
+
+.embedded-player {
+  height: 10rem;
+  width: 35rem;
+}
+
+// @supports (display: grid) {
+//   .main {
+
+//     @media (min-width: 1280px) {
+//       display: grid;
+//       grid-template-columns: 50% 50%;
+
+//       > * {
+//         padding: 0 2rem;
+//       }
+//     }
+//   }
+// }
+
+h1 {
+  text-align: center;
+}
+
+.event-wrapper {
+  margin-bottom: 5rem;
+
+  > * {
+    color: #333;
+    display: block;
+    padding: 1rem 2rem;
+  }
+
+  $elements: 1;
+  $i: 1;
+  @while $elements < 15 {
+    > *:nth-child(#{$elements}) {
+       background-color: rgba(255, 255, 255, $i);
+    }
+    $elements: $elements + 1;
+    $i: $i - 0.2;
+  }
+}
+
+footer {
+  text-align: center;
+}
+
+.tweets {
+  margin-top: 5rem;
+}
