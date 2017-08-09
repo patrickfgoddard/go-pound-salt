@@ -6,19 +6,24 @@
  * General Text Formatting
  */
 
-@import url('https://fonts.googleapis.com/css?family=Asar|Fugaz+One|Titillium+Web:900');
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto+Slab');
 
-$font-titillium:  'Titillium Web', sans-serif;
-$font-asar: 'Asar', serif; // base
-$font-fugaz: 'Fugaz One', cursive; //titles
+$font-bowlby: 'Bowlby One SC', cursive;
+$font-roboto-slab: 'Roboto Slab', sans-serif;
+
+$header-font: $font-bowlby;
+$default-font: $font-roboto-slab;
 
 html {
   //Uncomment below if you would like to use rems
-  font-family: $font-asar;
+  font-family: $default-font;
   font-size: 62.5%;
 }
 body {
   background-color: #000;
+  background-image: url('../assets/img/gps-pattern.svg');
+  background-position: top left;
+  background-repeat: repeat-y;
   color: #fff;
   font-size: 2rem;
   text-align: center;
@@ -35,38 +40,36 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: $font-fugaz;
+  font-family: $header-font;
+  font-weight: normal;
   margin: 2rem 0;
 }
 
 header,
 .main,
 footer {
-  background-color: #000;
-  max-width: 95rem;
-  margin: 2rem auto;
-  padding: 0 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: left;
 }
 
 .logo {
-  width: 25rem;
+  width: 100%;
 }
 
 header {
-  background-color: #333;
-  background-image: url('../assets/img/gps-pattern.svg');
-  background-position: top-left;
-  background-size: 50%;
-  // padding: 2rem;
+  background-color: transparent;
   text-align: center;
+
+  h1 {
+    margin: 0;
+  }
 
   h1 a:link,
   h1 a:visited {
     color: #000;
-    font-family: $font-titillium;
     font-size: 8rem;
     font-style: none;
+    line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
     text-shadow:
@@ -86,53 +89,90 @@ header {
   }
 }
 
+.main {
+  padding: 0 4rem;
+  width: calc(100% - 8rem);
+
+  > section {
+    margin-bottom: 4rem;
+  }
+}
+
 .embedded-player {
   height: 10rem;
   width: 35rem;
 }
 
-// @supports (display: grid) {
-//   .main {
+.vid-container {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
 
-//     @media (min-width: 1280px) {
-//       display: grid;
-//       grid-template-columns: 50% 50%;
-
-//       > * {
-//         padding: 0 2rem;
-//       }
-//     }
-//   }
-// }
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
 
 h1 {
   text-align: center;
 }
 
-.event-wrapper {
-  margin-bottom: 5rem;
-
-  > * {
-    color: #333;
-    display: block;
-    padding: 1rem 2rem;
-  }
-
-  $elements: 1;
-  $i: 1;
-  @while $elements < 15 {
-    > *:nth-child(#{$elements}) {
-       background-color: rgba(255, 255, 255, $i);
-    }
-    $elements: $elements + 1;
-    $i: $i - 0.2;
-  }
-}
-
 footer {
+  margin: 2rem;
+  padding: 2rem;
   text-align: center;
+  width: 80%;
 }
 
 .tweets {
   margin-top: 5rem;
+}
+
+// Grid layout
+@supports (display: grid) {
+
+  @media (min-width: 780px) {
+
+    body {
+      display: grid;
+      grid-template-columns: 20% 20% 20% 20% 20%;
+      grid-template-rows: 20% 20% 20% 20%;
+      margin: 0;
+      padding: 4rem;
+
+      > * {
+        // width: 100%;
+      }
+    }
+
+    header {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 3;
+      padding: 0;
+      margin: 0;
+    }
+
+    .main {
+      grid-column: 3 / span 3;
+      grid-row: 2;
+    }
+
+    footer {
+      grid-column: 1 / span 5;
+      grid-row: 4;
+    }
+  }
+}
+
+// Releases
+.releases {
+
+  li {
+    margin-bottom: 2rem;
+  }
 }
