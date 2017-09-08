@@ -21,8 +21,6 @@ html {
 }
 body {
   background-color: #000;
-  background-image: url('../assets/img/gps-bg-pattern.png');
-  background-position: top left;
   color: #fff;
   font-size: 2rem;
   text-align: center;
@@ -57,7 +55,10 @@ footer {
 }
 
 header {
-  background-color: transparent;
+  background-image: url('../assets/img/gps-bg-pattern.png');
+  background-position: top left;
+  background-repeat: no-repeat;
+  padding: 2rem;
   text-align: center;
 
   h1 {
@@ -153,7 +154,6 @@ footer {
     header {
       grid-column: 1 / span 2;
       grid-row: 1 / span 3;
-      padding: 0;
       margin: 0;
     }
 
