@@ -45,24 +45,37 @@ h5 {
 header,
 .main,
 footer {
-  background-color: rgba(0, 0, 0, 0.9);
+  // background-color: rgba(0, 0, 0, 0.9);
   text-align: left;
 }
 
 .logo {
-  max-width: 50rem;
-  width: 100%;
+  // border: 20px solid #000;
+  background-color: black;
+  border: 5px solid white;
+  display: block;
+  height: auto;
+  max-width: 100%;
+  padding: 2rem;
 }
 
 header {
-  background-image: url('../assets/img/gps-bg-pattern.png');
-  background-position: top left;
-  background-repeat: no-repeat;
-  padding: 2rem;
+  background-image: url(../assets/img/gps-bg-pattern.png);
+  background-repeat: repeat;
+  position: relative;
+  text-align: center;
+  position: relative;
   text-align: center;
 
   h1 {
-    margin: 0;
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 2rem;
+    width: auto;
+
+    a {
+      display: block;
+    }
   }
 
   h1 a:link,
@@ -91,8 +104,9 @@ header {
 }
 
 .main {
+  margin: 0 auto;
+  max-width: 72rem;
   padding: 2rem 4rem;
-  width: calc(100% - 8rem);
 
   > section {
     margin-bottom: 4rem;
@@ -135,6 +149,7 @@ footer {
 }
 
 // Grid layout
+/**
 @supports (display: grid) {
 
   @media (min-width: 780px) {
@@ -168,6 +183,7 @@ footer {
     }
   }
 }
+*/
 
 // Releases
 .releases {
