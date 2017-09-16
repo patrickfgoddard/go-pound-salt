@@ -50,28 +50,30 @@ footer {
 }
 
 .logo {
-  // border: 20px solid #000;
   background-color: black;
-  border: 5px solid white;
+  border: .5rem solid white;
   display: block;
   height: auto;
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: 30rem;
   padding: 2rem;
+  width: calc(100% - 9rem);
 }
 
 header {
   background-image: url(../assets/img/gps-bg-pattern.png);
   background-repeat: repeat;
+  margin: 0;
+  padding: 2rem;
   position: relative;
   text-align: center;
   position: relative;
   text-align: center;
 
   h1 {
-    max-width: 30rem;
-    margin: 0 auto;
-    padding: 2rem;
-    width: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 
     a {
       display: block;
