@@ -16,9 +16,9 @@
 title: Go Pound Salt - A noise pop, pop punk band from San Francisco, CA
 email: thund3rbox@gmail.com
 description: "Mid-90's noise pop, Pop Punk band from San Francisco, California, back with new music for a new future."
-baseurl: "/go-pound-salt" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://www.gopoundsaltmusic.com" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: PlasmaCannon916
+twitter_username: gopoundsaltband
 github_username: patrickfgoddard
 
 # Build settings
