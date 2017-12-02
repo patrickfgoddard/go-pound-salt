@@ -2,17 +2,34 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
+
+/**
+ * Variables
+ */
+
+$x-small:    'screen and (min-width: 320px)';
+$small:      'screen and (min-width: 480px)';
+$small-ish:  'screen and (min-width: 576px)';
+$medium:     'screen and (min-width: 768px)';
+$medium-ish: 'screen and (min-width: 960px)';
+$large:      'screen and (min-width: 1068px)';
+$large-ish:  'screen and (min-width: 1150px)';
+$x-large:    'screen and (min-width: 1280px)';
+$mobile-nav: 'screen and (max-width: 959px)';
+$xx-large:    'screen and (min-width: 1440px)';
 /**
  * General Text Formatting
  */
 
-@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700|Playfair+Display:400,400i,700');
 
 $font-bowlby: 'Bowlby One SC', cursive;
 $font-roboto-slab: 'Roboto Slab', sans-serif;
+$font-josefin: 'Josefin Sans', sans-serif;
+$font-playfair: 'Playfair Display', serif;
 
-$header-font: $font-bowlby;
-$default-font: $font-roboto-slab;
+$header-font: $font-josefin;
+$default-font: $font-playfair;
 
 html {
   //Uncomment below if you would like to use rems
@@ -38,8 +55,13 @@ h3,
 h4,
 h5 {
   font-family: $header-font;
-  font-weight: normal;
-  margin: 2rem 0;
+  font-weight: bold;
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 4rem;
 }
 
 header,
@@ -107,11 +129,20 @@ header {
 
 .main {
   margin: 0 auto;
-  max-width: 72rem;
-  padding: 2rem 4rem;
+  // max-width: 72rem;
+  // padding: 2rem 4rem;
 
   > section {
-    margin-bottom: 4rem;
+    overflow: hidden;
+    padding: 3rem 10%;
+
+    @media #{$medium} {
+      padding: 5rem 25%;
+    }
+
+    &:nth-child(even) {
+      background-color: #222;
+    }
   }
 }
 
