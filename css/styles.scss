@@ -235,3 +235,16 @@ footer {
   width: 100%;
   max-width: 50rem;
 }
+
+.latest-release {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+
+  @media #{$medium} {
+    display: grid;
+  }
+
+  > h2 {
+    grid-column: 1 / 3;
+  }
+}
